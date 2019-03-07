@@ -1,16 +1,37 @@
 {
-    "name": "nineyang/lena-framework",
-    "description": "lena framework.",
-    "type": "project",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "nineyang",
-            "email": "nine.yang.coding@gmail.com"
-        }
-    ],
-    "require": {
-        "nikic/fast-route": "^1.3",
-        "doctrine/annotations": "^1.6"
+  "name": "nineyang/lena-framework",
+  "description": "lena framework.",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "nineyang",
+      "email": "nine.yang.coding@gmail.com"
     }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "nikic/fast-route": "^1.3",
+    "doctrine/annotations": "^1.6",
+    "phpunit/phpunit": "^7.5",
+    "monolog/monolog": "^1.24"
+  },
+  "autoload": {
+    "classmap": [
+    ],
+    "psr-4": {
+      "LenaFramework\\": "src/"
+    },
+    "files": [
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LenaFrameworkTest\\": "test/"
+    }
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit -c phpunit.xml",
+    "cs-fix": "./vendor/bin/php-cs-fixer fix $1"
+  }
 }
