@@ -10,7 +10,8 @@ class Application
 
     public static function main()
     {
-        LenaApplication::run();
+        $app = new LenaApplication();
+        $app->run();
     }
 
 }

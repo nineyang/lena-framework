@@ -3,6 +3,7 @@
 namespace LenaFramework\Core;
 
 use Monolog\Logger;
+use LenaFramework\Core\ApplicationContext;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,9 +13,14 @@ use Monolog\Logger;
  */
 final class LenaApplication
 {
-    public static function run()
+    use ApplicationContext;
+
+    public function run()
     {
         $logger = new Logger('lena');
         $logger->alert("lena application has run.");
+
+        $this->prepareContext();
     }
+
 }
